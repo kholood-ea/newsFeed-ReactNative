@@ -13,9 +13,9 @@ const linking = {
     screens: {
       Root: {
         screens: {
-          TabOne: {
+          NewsFeed: {
             screens: {
-              TabOneScreen: "one",
+              NewsFeedScreen: "news",
             },
           },
           TabTwo: {
