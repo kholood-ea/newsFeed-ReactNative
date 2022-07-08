@@ -5,7 +5,7 @@ import useCachedResources from "./hooks/useCachedResources";
 import Navigation from "./navigation";
 
 import { ThemeContextProvider } from "./context/ThemeContext";
-
+import { LanguageContextProvider } from "./context/LanguageContext";
 export default function App() {
   const isLoadingComplete = useCachedResources();
 
@@ -13,12 +13,14 @@ export default function App() {
     return null;
   } else {
     return (
-      <ThemeContextProvider>
-        <SafeAreaProvider>
-          <Navigation />
-          <StatusBar />
-        </SafeAreaProvider>
-      </ThemeContextProvider>
+      <LanguageContextProvider>
+        <ThemeContextProvider>
+          <SafeAreaProvider>
+            <Navigation />
+            <StatusBar />
+          </SafeAreaProvider>
+        </ThemeContextProvider>
+      </LanguageContextProvider>
     );
   }
 }

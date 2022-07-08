@@ -2,7 +2,6 @@ import { StyleSheet } from "react-native";
 
 import EditScreenInfo from "../components/EditScreenInfo";
 import { Text, View } from "../components/Themed";
-
 export default function TabOneScreen({ navigation }) {
   return (
     // <View style={styles.container}>
@@ -15,6 +14,7 @@ export default function TabOneScreen({ navigation }) {
         lightColor="#eee"
         darkColor="rgba(255,255,255,0.1)"
       />
+
       <EditScreenInfo path="/screens/TabOneScreen.tsx" />
     </View>
   );

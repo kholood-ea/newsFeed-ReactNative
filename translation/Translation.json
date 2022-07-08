@@ -1,0 +1,20 @@
+{
+    "en":{
+        "news":"news",
+        "cnews":"News",
+        "settings":"settings",
+        "switchModeText":"switch theme mode",
+        "changeLanguageText":"change language to arabic"
+
+
+
+    },
+    "ar":{
+        "news":"الأخبار",
+        "cnews":"الأخبار",
+        "settings":"الإعدادات",
+        "switchModeText":"اضغط هنا لتغير المظهر",
+        "changeLanguageText":"تغيير اللغة للانجليزية"
+
+    }
+}

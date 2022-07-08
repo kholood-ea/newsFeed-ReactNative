@@ -23,6 +23,9 @@ import TabTwoScreen from "../screens/TabTwoScreen";
 
 import LinkingConfiguration from "./LinkingConfiguration";
 import { useThemeContext } from "../context/ThemeContext";
+import { useLanguageContext } from "../context/LanguageContext";
+
+import * as trans from "../translation/Translation.json";
 
 export default function Navigation({ colorScheme }) {
   let { darkMode } = useThemeContext();
@@ -70,8 +73,8 @@ function RootNavigator() {
 const BottomTab = createBottomTabNavigator();
 
 function BottomTabNavigator() {
-  const colorScheme = useColorScheme();
   let { theme } = useThemeContext();
+  let { language } = useLanguageContext();
 
   return (
     <BottomTab.Navigator
@@ -84,7 +87,7 @@ function BottomTabNavigator() {
         name="TabOne"
         component={TabOneScreen}
         options={({ navigation }) => ({
-          title: "Tab One",
+          title: trans[language].cnews,
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
           headerRight: () => (
             <Pressable
@@ -107,7 +110,7 @@ function BottomTabNavigator() {
         name="TabTwo"
         component={TabTwoScreen}
         options={{
-          title: "Tab Two",
+          title: trans[language].settings,
           tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
         }}
       />
