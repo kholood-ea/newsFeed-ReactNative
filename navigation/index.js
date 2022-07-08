@@ -47,6 +47,8 @@ export default function Navigation({ colorScheme }) {
 const Stack = createNativeStackNavigator();
 
 function RootNavigator() {
+  let { language } = useLanguageContext();
+
   return (
     <Stack.Navigator>
       <Stack.Screen
@@ -57,7 +59,7 @@ function RootNavigator() {
       <Stack.Screen
         name="NotFound"
         component={NotFoundScreen}
-        options={{ title: "Oops!" }}
+        options={{ title: trans[language].oops }}
       />
       <Stack.Group screenOptions={{ presentation: "modal" }}>
         <Stack.Screen name="Modal" component={ModalScreen} />

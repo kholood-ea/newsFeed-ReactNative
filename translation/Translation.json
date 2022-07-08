@@ -4,7 +4,13 @@
         "cnews":"News",
         "settings":"settings",
         "switchModeText":"switch theme mode",
-        "changeLanguageText":"change language to arabic"
+        "changeLanguageText":"change language to arabic",
+        "oops":"Oops!",
+        "screenNotFound":"This screen doesn't exist.",
+        "goHome":"Go to home screen!"
+
+
+    
 
 
 
@@ -14,7 +20,11 @@
         "cnews":"الأخبار",
         "settings":"الإعدادات",
         "switchModeText":"اضغط هنا لتغير المظهر",
-        "changeLanguageText":"تغيير اللغة للانجليزية"
+        "changeLanguageText":"تغيير اللغة للانجليزية",
+        "oops":"حدث خطأ",
+        "screenNotFound":"تعذر الوصول للصفحة",
+        "goHome":"العودة للصفحة الرئيسية"
+
 
     }
 }
