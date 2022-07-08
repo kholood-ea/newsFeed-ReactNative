@@ -22,12 +22,15 @@ import TabOneScreen from "../screens/TabOneScreen";
 import TabTwoScreen from "../screens/TabTwoScreen";
 
 import LinkingConfiguration from "./LinkingConfiguration";
+import { useThemeContext } from "../context/ThemeContext";
 
 export default function Navigation({ colorScheme }) {
+  let { darkMode } = useThemeContext();
+
   return (
     <NavigationContainer
       linking={LinkingConfiguration}
-      theme={colorScheme === "dark" ? DarkTheme : DefaultTheme}
+      theme={darkMode === true ? DarkTheme : DefaultTheme}
     >
       <RootNavigator />
     </NavigationContainer>
@@ -68,12 +71,13 @@ const BottomTab = createBottomTabNavigator();
 
 function BottomTabNavigator() {
   const colorScheme = useColorScheme();
+  let { theme } = useThemeContext();
 
   return (
     <BottomTab.Navigator
       initialRouteName="TabOne"
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme].tint,
+        tabBarActiveTintColor: Colors[theme].tint,
       }}
     >
       <BottomTab.Screen
@@ -92,7 +96,7 @@ function BottomTabNavigator() {
               <FontAwesome
                 name="info-circle"
                 size={25}
-                color={Colors[colorScheme].text}
+                color={Colors[theme].text}
                 style={{ marginRight: 15 }}
               />
             </Pressable>

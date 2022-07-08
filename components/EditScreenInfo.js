@@ -5,14 +5,17 @@ import Colors from "../constants/Colors";
 import { MonoText } from "./StyledText";
 import { Text, View } from "./Themed";
 
+import { useThemeContext } from "../context/ThemeContext";
+
 export default function EditScreenInfo({ path }) {
+  let { darkMode, setDarkMode } = useThemeContext();
   return (
     <View>
       <View style={styles.getStartedContainer}>
         <Text
           style={styles.getStartedText}
-          lightColor="rgba(0,0,0,0.8)"
-          darkColor="rgba(255,255,255,0.8)"
+          // lightColor="rgba(0,0,0,0.8)"
+          // darkColor="rgba(255,255,255,0.8)"
         >
           Open up the code for this screen:
         </Text>
@@ -40,6 +43,19 @@ export default function EditScreenInfo({ path }) {
           <Text style={styles.helpLinkText} lightColor={Colors.light.tint}>
             Tap here if your app doesn't automatically update after making
             changes
+          </Text>
+        </TouchableOpacity>
+      </View>
+
+      <View style={styles.helpContainer}>
+        <TouchableOpacity
+          onPress={() => {
+            setDarkMode(!darkMode);
+          }}
+          style={styles.helpLink}
+        >
+          <Text style={styles.helpLinkText} lightColor={Colors.light.tint}>
+            Tap here to switch theme mode
           </Text>
         </TouchableOpacity>
       </View>

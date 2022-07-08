@@ -6,10 +6,14 @@
 import { Text as DefaultText, View as DefaultView } from "react-native";
 
 import Colors from "../constants/Colors";
-import useColorScheme from "../hooks/useColorScheme";
+import useColorScheme from "../context/ThemeContext";
+
+import { useThemeContext } from "../context/ThemeContext";
 
 export function useThemeColor(props, colorName) {
-  const theme = useColorScheme();
+  let { theme } = useThemeContext();
+
+  // const theme = useColorScheme();
   const colorFromProps = props[theme];
 
   if (colorFromProps) {

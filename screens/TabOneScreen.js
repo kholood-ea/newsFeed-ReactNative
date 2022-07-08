@@ -5,6 +5,9 @@ import { Text, View } from "../components/Themed";
 
 export default function TabOneScreen({ navigation }) {
   return (
+    // <View style={styles.container}>
+    //   <Text></Text>
+    // </View>
     <View style={styles.container}>
       <Text style={styles.title}>Tab One</Text>
       <View
