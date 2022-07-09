@@ -14,10 +14,10 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import * as React from "react";
 
 import Colors from "../constants/Colors";
-import ModalScreen from "../screens/ModalScreen";
 import NotFoundScreen from "../screens/NotFoundScreen";
 import TabTwoScreen from "../screens/TabTwoScreen";
 import NewsFeed from "../screens/NewsFeed";
+import NewsArticle from "../screens/NewsArticle";
 
 import LinkingConfiguration from "./LinkingConfiguration";
 import { useThemeContext } from "../context/ThemeContext";
@@ -55,13 +55,16 @@ function RootNavigator() {
         options={{ headerShown: false }}
       />
       <Stack.Screen
+        name="NewsArticle"
+        component={NewsArticle}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
         name="NotFound"
         component={NotFoundScreen}
         options={{ title: trans[language].oops }}
       />
-      <Stack.Group screenOptions={{ presentation: "modal" }}>
-        <Stack.Screen name="Modal" component={ModalScreen} />
-      </Stack.Group>
+      <Stack.Group screenOptions={{ presentation: "modal" }}></Stack.Group>
     </Stack.Navigator>
   );
 }
