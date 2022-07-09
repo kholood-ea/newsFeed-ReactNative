@@ -8,7 +8,8 @@
         "oops":"Oops!",
         "screenNotFound":"This screen doesn't exist.",
         "goHome":"Go to home screen!",
-        "back":"Back"
+        "back":"Back",
+        "searchPlaceholder":"What are you looking for ?"
 
 
 
@@ -26,7 +27,9 @@
         "oops":"حدث خطأ",
         "screenNotFound":"تعذر الوصول للصفحة",
         "goHome":"العودة للصفحة الرئيسية",
-        "back":"رجوع"
+        "back":"رجوع",
+        "searchPlaceholder":"ما الذي تبحث عنه ؟"
+
 
 
 
