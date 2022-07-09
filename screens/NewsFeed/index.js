@@ -3,10 +3,23 @@ import React, { Component } from "react";
 // import { Text } from "react-native";
 import { Text, View } from "../../components/Themed";
 
-export default function () {
+import Hooks from "./Hooks";
+
+import SearchBar from "./SearchBar";
+import NewsList from "./NewsList";
+
+export default function ({ navigation }) {
+  let { data, refetch, isFetching } = Hooks();
+
   return (
     <>
-      <Text>news screen</Text>
+      <SearchBar />
+      {isFetching && <Text>Loadin.....</Text>}
+      <NewsList
+        news={data?.articles}
+        navigation={navigation}
+        refresh={refetch}
+      />
     </>
   );
 }
