@@ -4,11 +4,7 @@ import { FlatList, RefreshControl } from "react-native";
 import { View, Text } from "../../components/Themed";
 import NewsArticle from "./NewsArticle";
 
-export default function ({ news, navigation, refresh }) {
-  const wait = (timeout) => {
-    return new Promise((resolve) => setTimeout(resolve, timeout));
-  };
-
+export default function ({ news, wait, navigation, refresh }) {
   const [refreshing, setRefreshing] = React.useState(false);
 
   const onRefresh = React.useCallback(() => {
@@ -17,7 +13,7 @@ export default function ({ news, navigation, refresh }) {
     wait(2000).then(() => setRefreshing(false));
   }, []);
   const renderItem = ({ item }) => (
-    <NewsArticle key={item.id} newsArticle={item} navigation={navigation} />
+    <NewsArticle newsArticle={item} navigation={navigation} />
   );
 
   return (
