@@ -3,8 +3,13 @@ import { View, Text, TextInput } from "../../components/Themed";
 
 import * as trans from "../../translation/Translation.json";
 import { useLanguageContext } from "../../context/LanguageContext";
-export default function () {
+export default function ({ search, refresh }) {
   let { language } = useLanguageContext();
+  let handleSearch = (word) => {
+    if (word.trim() == "") {
+      refresh();
+    } else search(word);
+  };
   return (
     <>
       <View
@@ -13,6 +18,7 @@ export default function () {
         <TextInput
           style={{ height: 40, width: "100%" }}
           placeholder={trans[language].searchPlaceholder}
+          onChangeText={(word) => handleSearch(word)}
         />
       </View>
     </>

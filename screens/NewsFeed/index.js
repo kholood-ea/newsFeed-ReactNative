@@ -9,14 +9,16 @@ import SearchBar from "./SearchBar";
 import NewsList from "./NewsList";
 
 export default function ({ navigation }) {
-  let { data, refetch, isFetching } = Hooks();
-
+  let { articles, wait, refetch, isFetching, omptimizedSearch } = Hooks();
   return (
     <>
-      <SearchBar />
+      <SearchBar search={omptimizedSearch} refresh={refetch} />
       {isFetching && <Text>Loadin.....</Text>}
+      {articles?.length === 0 && <Text>No articles found</Text>}
+
       <NewsList
-        news={data?.articles}
+        wait={wait}
+        news={articles}
         navigation={navigation}
         refresh={refetch}
       />
