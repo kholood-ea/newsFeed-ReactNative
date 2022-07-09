@@ -7,7 +7,9 @@
         "changeLanguageText":"change language to arabic",
         "oops":"Oops!",
         "screenNotFound":"This screen doesn't exist.",
-        "goHome":"Go to home screen!"
+        "goHome":"Go to home screen!",
+        "back":"Back"
+
 
 
     
@@ -23,7 +25,9 @@
         "changeLanguageText":"تغيير اللغة للانجليزية",
         "oops":"حدث خطأ",
         "screenNotFound":"تعذر الوصول للصفحة",
-        "goHome":"العودة للصفحة الرئيسية"
+        "goHome":"العودة للصفحة الرئيسية",
+        "back":"رجوع"
+
 
 
     }
