@@ -7,12 +7,12 @@ import moment from "moment";
 export default function ({ newsArticle, navigation }) {
   return (
     <TouchableOpacity
+      key={newsArticle?.id}
       onPress={() =>
         navigation.navigate("NewsArticle", { Details: newsArticle })
       }
     >
       <View
-        id={newsArticle?.id}
         style={{
           flexDirection: "row",
           padding: 5,
