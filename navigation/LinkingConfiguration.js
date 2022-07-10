@@ -15,12 +15,15 @@ const linking = {
         screens: {
           NewsFeed: {
             screens: {
-              NewsFeedScreen: "news",
-            },
-          },
-          TabTwo: {
-            screens: {
-              TabTwoScreen: "two",
+              NewsFeedScreen: {
+                path: "news",
+              },
+              SingleArticleScreen: {
+                path: "news/:title",
+                parse: {
+                  articletitle: (articleTitle) => `${articleTitle}`,
+                },
+              },
             },
           },
         },
