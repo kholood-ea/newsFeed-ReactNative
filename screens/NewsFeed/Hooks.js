@@ -36,9 +36,8 @@ export default function () {
     };
   };
   let search = (word) => {
-    let x = articles.filter((n) => n.title.includes(word));
-    setArticles(x);
-    console.log(articles);
+    let filteredArticle = articles.filter((n) => n.title.includes(word));
+    setArticles(filteredArticle);
   };
   const omptimizedSearch = useCallback(debounce(search), [articles]);
 
