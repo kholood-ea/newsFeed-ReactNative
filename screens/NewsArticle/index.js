@@ -35,7 +35,7 @@ export default function ({ navigation, route }) {
                 margin: 20,
                 alignSelf: "center",
               }}
-              source={{ uri: Details.urlToImage }}
+              source={{ uri: Details?.urlToImage }}
             ></Image>
             <Text style={{ padding: 10, fontSize: 20, marginBottom: 10 }}>
               {Details?.title}

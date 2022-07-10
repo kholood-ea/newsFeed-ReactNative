@@ -1,14 +1,11 @@
-import React, { Component, useState, useCallback, useEffect } from "react";
+import { useState, useCallback, useEffect } from "react";
 
 import * as config from "../../config.json";
-import {
-  QueryClient,
-  QueryClientProvider,
-  useQuery,
-  useQueryClient,
-} from "react-query";
+import { useQuery } from "react-query";
 
-export default function () {
+import * as Linking from "expo-linking";
+
+export default function ({ navigation }) {
   const [articles, setArticles] = useState([]);
   const fetchNews = () => {
     return fetch(
@@ -48,6 +45,20 @@ export default function () {
   useEffect(() => {
     setArticles(news?.data?.articles);
   }, [isFetching]);
+
+  let handleURL = async () => {
+    let url = await Linking.getInitialURL();
+    let titleStartIndex = url.lastIndexOf("/");
+
+    let title = url.slice(titleStartIndex + 1, url.length);
+
+    let article = articles && articles.find((a) => a.title.includes(title));
+    navigation.navigate("NewsArticle", { Details: article });
+  };
+
+  useEffect(() => {
+    Linking.addEventListener("url", handleURL);
+  }, []);
 
   return { articles, isFetching, refetch, wait, omptimizedSearch };
 }
