@@ -15,7 +15,7 @@ import * as React from "react";
 
 import Colors from "../constants/Colors";
 import NotFoundScreen from "../screens/NotFoundScreen";
-import TabTwoScreen from "../screens/TabTwoScreen";
+import Settings from "../screens/Settings";
 import NewsFeed from "../screens/NewsFeed";
 import NewsArticle from "../screens/NewsArticle";
 
@@ -97,8 +97,8 @@ function BottomTabNavigator() {
         }}
       />
       <BottomTab.Screen
-        name="TabTwo"
-        component={TabTwoScreen}
+        name="Settings"
+        component={Settings}
         options={{
           title: trans[language].settings,
           tabBarIcon: ({ color }) => <TabBarIcon name="gears" color={color} />,
