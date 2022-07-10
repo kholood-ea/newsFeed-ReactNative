@@ -7,7 +7,6 @@ import moment from "moment";
 export default function ({ newsArticle, navigation }) {
   return (
     <TouchableOpacity
-      key={newsArticle?.id}
       onPress={() =>
         navigation.navigate("NewsArticle", { Details: newsArticle })
       }

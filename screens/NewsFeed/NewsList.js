@@ -24,7 +24,7 @@ export default function ({ news, wait, navigation, refresh }) {
           <RefreshControl refreshing={refreshing} onRefresh={onRefresh} />
         }
         renderItem={renderItem}
-        keyExtractor={(item) => item.id}
+        keyExtractor={(item) => item.title}
       />
     </>
   );
